@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://practicecovidreportingdl.dfs.core.windows.net/"
 		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/5c62614a-b867-4192-93e0-2e16baba08dd/resourceGroups/learning-azure-datafactory-rg/providers/Microsoft.Storage/storageAccounts/practicecovidreportingsa"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"ls_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
+					},
+					"tr_ingest_population_data_properties_typeProperties_scope": {
+						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
 					}
 				}
 			},
