@@ -1,0 +1,9 @@
+{
+	"name": "learning-course-azure-datafactory",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "41c59e42-d829-46de-9ee1-afd1f63b7e4c",
+		"tenantId": "06aceea7-6395-4c50-bffe-5e382c9d2c33"
+	}
+}
