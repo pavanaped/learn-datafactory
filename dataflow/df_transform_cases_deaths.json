@@ -85,8 +85,8 @@
 				"          indicator,",
 				"          daily_count,",
 				"          source,",
-				"          each(match(name == 'date'),",
-				"               'reported' + '_date' = $$)",
+				"          each(match(name=='date'),",
+				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",
@@ -111,20 +111,22 @@
 				"          deaths_count,",
 				"          reported_date,",
 				"          source,",
-				"          each(match(name == 'confirmed cases_count'),",
+				"          each(match(name=='confirmed cases_count'),",
 				"               'confirmed_cases_count' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> SelectForSink",
 				"SelectForSink sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['cases_and_deaths.csv'],",
 				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> CaseAndDeathsSink"
+				"     saveOrder: 1,",
+				"     partitionBy('hash', 1)) ~> CaseAndDeathsSink"
 			]
 		}
 	}

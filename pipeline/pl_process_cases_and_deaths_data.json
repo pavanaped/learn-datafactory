@@ -28,7 +28,7 @@
 			}
 		],
 		"folder": {
-			"name": "covid-ingest"
+			"name": "covid-transformation"
 		},
 		"annotations": []
 	}
