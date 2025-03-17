@@ -409,7 +409,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid-ingest"
 				},
 				"annotations": []
 			},
@@ -613,7 +613,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid-ingest"
 				},
 				"annotations": []
 			},
@@ -644,8 +644,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2025-03-17T08:22:00",
-						"timeZone": "GMT Standard Time",
-						"schedule": {}
+						"timeZone": "GMT Standard Time"
 					}
 				}
 			},
