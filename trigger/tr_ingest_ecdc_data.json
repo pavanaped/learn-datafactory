@@ -1,5 +1,5 @@
 {
-	"name": "tr_ingest_hospital_adminissions_data",
+	"name": "tr_ingest_ecdc_data",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
@@ -20,7 +20,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2025-03-16T22:43:00",
+				"startTime": "2025-03-17T08:22:00",
 				"timeZone": "GMT Standard Time"
 			}
 		}
