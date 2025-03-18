@@ -35,10 +35,6 @@
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseURL}"
 		},
-		"tr_ingest_population_data_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/5c62614a-b867-4192-93e0-2e16baba08dd/resourceGroups/learning-azure-datafactory-rg/providers/Microsoft.Storage/storageAccounts/practicecovidreportingsa"
-		},
 		"ls_sql_covid_database_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "practicecovid-srv.database.windows.net"
@@ -50,6 +46,10 @@
 		"ls_sql_covid_database_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "adm"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/5c62614a-b867-4192-93e0-2e16baba08dd/resourceGroups/learning-azure-datafactory-rg/providers/Microsoft.Storage/storageAccounts/practicecovidreportingsa"
 		},
 		"containerUri": {
 			"type": "string",

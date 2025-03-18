@@ -191,7 +191,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/lookup"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -244,7 +244,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "Json",
@@ -286,7 +286,7 @@
 					}
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -335,7 +335,7 @@
 					}
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -368,7 +368,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -401,7 +401,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -433,7 +433,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/processed"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -464,7 +464,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/processed"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -495,7 +495,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/processed"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -517,6 +517,74 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ds_processed_testing')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_adls_covidreportingdl",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "covid/processed"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "ecdc/testing",
+						"fileSystem": "processed"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_adls_covidreportingdl')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ds_raw_cases_deaths')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -526,7 +594,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -595,7 +663,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/raw"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -647,87 +715,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_weekly_dates_lookup')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ls_adls_covidreportingdl",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "covid"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "dim_date.csv",
-						"folderPath": "dim_date",
-						"fileSystem": "lookup"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "date_key",
-						"type": "String"
-					},
-					{
-						"name": "date",
-						"type": "String"
-					},
-					{
-						"name": "year",
-						"type": "String"
-					},
-					{
-						"name": "month",
-						"type": "String"
-					},
-					{
-						"name": "day",
-						"type": "String"
-					},
-					{
-						"name": "day_name",
-						"type": "String"
-					},
-					{
-						"name": "day_of_year",
-						"type": "String"
-					},
-					{
-						"name": "week_of_month",
-						"type": "String"
-					},
-					{
-						"name": "week_of_year",
-						"type": "String"
-					},
-					{
-						"name": "month_name",
-						"type": "String"
-					},
-					{
-						"name": "year_month",
-						"type": "String"
-					},
-					{
-						"name": "year_week",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_adls_covidreportingdl')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/ds_sql_cases_and_deaths')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -737,7 +724,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/sql"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -797,7 +784,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "covid"
+					"name": "covid/sql"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
