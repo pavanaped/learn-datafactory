@@ -14,6 +14,9 @@
 		"ls_db_covid_cluster_accessToken": {
 			"value": ""
 		},
+		"ls_sql_covid_database_password": {
+			"value": ""
+		},
 		"ls_adls_covidreportingdl_properties_typeProperties_url": {
 			"value": "https://practicecovidreportingdl.dfs.core.windows.net/"
 		},
@@ -25,6 +28,15 @@
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/5c62614a-b867-4192-93e0-2e16baba08dd/resourceGroups/learning-azure-datafactory-rg/providers/Microsoft.Storage/storageAccounts/practicecovidreportingsa"
+		},
+		"ls_sql_covid_database_properties_typeProperties_server": {
+			"value": "practicecovid-srv.database.windows.net"
+		},
+		"ls_sql_covid_database_properties_typeProperties_database": {
+			"value": "covid-db"
+		},
+		"ls_sql_covid_database_properties_typeProperties_userName": {
+			"value": "adm"
 		},
 		"containerUri": {
 			"value": ""
