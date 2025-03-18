@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "covid"
+			"name": "covid/raw"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
