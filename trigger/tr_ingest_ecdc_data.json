@@ -2,12 +2,12 @@
 	"name": "tr_ingest_ecdc_data",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"type": "TumblingWindowTrigger",
 		"typeProperties": {
 			"frequency": "Hour",
 			"interval": 24,
-			"startTime": "2025-03-17T17:14:00Z",
+			"startTime": "2025-03-17T12:30:00Z",
 			"delay": "00:00:00",
 			"maxConcurrency": 50,
 			"retryPolicy": {
