@@ -1,0 +1,9 @@
+{
+	"name": "practice-datafactory-instance",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "13554c91-b641-4967-b5c1-5bb1295b9a5a",
+		"tenantId": "a02045e0-3d4c-4cdd-b419-53f144221f61"
+	}
+}
