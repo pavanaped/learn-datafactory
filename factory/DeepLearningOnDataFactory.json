@@ -1,0 +1,9 @@
+{
+	"name": "DeepLearningOnDataFactory",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "beeba511-4e40-4a9d-8358-78df9e3fa1df",
+		"tenantId": "e54ff337-fe67-4992-8922-ca38c81c8c65"
+	}
+}
